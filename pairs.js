@@ -16,9 +16,34 @@
 *
 * - It returns an empty array if it gets passed nothing:
 *       pairs() returns []
+
 ****************************************************************/
+
 function pairs(names) {
-  // Your code goes here
+
+  let Empty =[];
+  let namesList =[];
+  let list2 =[];
+  let x =0;
+
+if (!names){
+return Empty
+}
+else {
+  names.sort(() => Math.random() - 0.5);
+    for (let i=0 ;i<names.length;i++)
+    {
+      namesList.push(names[i])
+      x++;
+      if ((x == 2) || i == (names.length-1))
+      {
+        list2.push(namesList);
+        namesList=[];
+        x= 0;
+      }
+    }
+  return list2
+  }
 }
 
 module.exports = pairs;
